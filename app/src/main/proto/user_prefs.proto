@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.wangxingxing.datastoredemo.proto";
+option java_multiple_files = true;
+
+message UserPreferences {
+
+  bool show_completed = 1;
+  SortOrder sort_order = 2;
+
+  // 排序方式
+  enum  SortOrder {
+    UNSPECIFIED = 0;
+    NONE = 1;
+    BY_DEADLINE = 2; // 最后期限
+    BY_PRIORITY = 3; // 优先级
+    BY_DEADLINE_AND_PRIORITY = 4;// 最后期限和优先级
+  }
+}
